@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -13,11 +14,15 @@
         android:orientation="vertical">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/cancel"
-            android:layout_width="36dp"
+            android:id="@+id/arda_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
             android:layout_margin="15dp"
-            android:layout_height="36dp"
-            android:layout_gravity="end" />
+            android:src="@drawable/arda_cancel"
+            app:backgroundTint="#FFFF0000"
+            app:fabCustomSize="42dp"
+            app:maxImageSize="42dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,18 +31,55 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <EditText
-                android:id="@+id/bomber_text"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_marginEnd="25dp"
                 android:layout_height="wrap_content"
-                android:textSize="15sp" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spam Count: "
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/bomber_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#FF6000FF"
+                    android:hint="5"
+                    android:inputType="number"
+                    android:minWidth="50dp"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spam Text:  "
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/bomber_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#FF6000FF"
+                    android:hint="BOOM!"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
 
             <RadioGroup
                 android:id="@+id/radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:checkedButton="@id/radio_0">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -45,21 +87,24 @@
                     android:text="Randomizer: (Nachrichten mit $ trennen)" />
 
                 <RadioButton
+                    android:id="@+id/radio_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#FF6000FF"
+                    android:text="Aus" />
+
+                <RadioButton
                     android:id="@+id/radio_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Aus" />
+                    android:buttonTint="#FF6000FF"
+                    android:text="Reihenfolge" />
 
                 <RadioButton
                     android:id="@+id/radio_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Reihenfolge" />
-
-                <RadioButton
-                    android:id="@+id/radio_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:buttonTint="#FF6000FF"
                     android:text="Zufall" />
             </RadioGroup>
 
@@ -72,22 +117,24 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/save"
+                    android:id="@+id/arda_save"
                     style="@style/ardaButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="3dp"
                     android:backgroundTint="@color/black"
-                    android:text="Speichern" />
+                    android:text="Speichern"
+                    app:strokeColor="#FF6000FF" />
 
                 <Button
-                    android:id="@+id/send"
+                    android:id="@+id/arda_send"
                     style="@style/ardaButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
                     android:backgroundTint="@color/black"
-                    android:text="BOOM" />
+                    android:text="BOOM"
+                    app:strokeColor="#FF6000FF" />
 
             </LinearLayout>
 
